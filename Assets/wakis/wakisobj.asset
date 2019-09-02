@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad9259ed17dfab4e865ff36a66f6d49, type: 3}
+  m_Name: wakisobj
+  m_EditorClassIdentifier: 
+  trigger: -1
+  fishList:
+  - fish: {fileID: 8882589129326609583, guid: b8e8a6ec955dd394aaae5338fc59df19, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 8279199352989797401, guid: aec19eefa428aee4383cf81e70329b2e, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 5752793653443552998, guid: 743a05c9a62466f45bbfdddbc9fe90dd, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 4360275000301740168, guid: 515d5e75d5ca8794981969162f43ee39, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 4448538741127315906, guid: ce4a4e62f9447834cbfed7d388f69ba5, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 8924277080205541328, guid: aee580be4ba9c1140b8979a3a14174ee, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 6023904973447769402, guid: 06142ac251e85254fa336a1d3e4e0b1b, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 3598754514642985797, guid: 8c8de51c60589bf43ab4f0cc9d0c56d4, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 1829915792351479513, guid: b305d47a3c90753459c234cf6c4e9541, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 6461691827766745061, guid: 34cd37aaaaa397b458aa91212acae275, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 7396409398784680940, guid: 516226bfb4e110542bc31e3f14f2f650, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 7238532192911762452, guid: 0573498ad22262b4e8686e4a07468a49, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 8050304972139611424, guid: 1175e7d81aa905545a6d8532dd799813, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 8751300490453928415, guid: 8e318c805c4ac714e8b78f7109709ea0, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 3961840640205176303, guid: 055ed76b65085834eb630e62810e0076, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 1592079651814907925, guid: 0c9fc7dcc0adee64da4e91d627bb9c6b, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 7194613487491900469, guid: 630837e3eb4ebd24c8b90fb18bf70d77, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 5189820693613452656, guid: 96d2992afc6af6249bab35e67b19a048, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 6197434774285678801, guid: 4457a547488408f48a833fc4c80e88de, type: 3}
+    percent: 1
+    hitter: 0
+  - fish: {fileID: 3695907101287240431, guid: 39bf83d170fdb804fbd50c931bfcd64b, type: 3}
+    percent: 1
+    hitter: 0

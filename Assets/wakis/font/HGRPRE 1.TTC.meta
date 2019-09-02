@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 18dfcbdd2c65e8b44a7fe5261c791321
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: HGSoeiPresenceEB
+  fontNames:
+  - HGSoeiPresenceEB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: fdb68298e39575646928bbe80de4a4d5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

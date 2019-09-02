@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7105bd100ca14af4890a061460d9ae60, type: 3}
+  m_Name: wakissld
+  m_EditorClassIdentifier: 
+  trigger: -1
+  SlideList:
+  - slideImage: {fileID: 21300000, guid: f502f251e78711b4586d9aff83e5245c, type: 3}
+  - slideImage: {fileID: 21300000, guid: 18527ec86c8eb8647a1d040b673af010, type: 3}
