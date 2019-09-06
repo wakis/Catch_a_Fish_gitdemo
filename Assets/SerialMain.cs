@@ -19,6 +19,10 @@ public class SerialMain : MonoBehaviour
     [NonSerialized]
     public bool isLoop = true;
 
+    public static SerialPort se()
+    {
+        return endserial;
+    }
     void aa()
     {
         this.isLoop = false;
@@ -36,6 +40,8 @@ public class SerialMain : MonoBehaviour
     void Start()
     {
         bool opencom = false;
+        /*if (endserial != null) serial = endserial;
+        
         Debug.Log("start");
         this.serial = new SerialPort(portName, baurate, Parity.None, 8, StopBits.One);
         if(endserial==null) endserial = serial;
@@ -48,8 +54,8 @@ public class SerialMain : MonoBehaviour
         {
             Debug.Log("can not open serial port");
             opencom = true;
-        }
-        if (opencom) Port_Start(1);
+        }*/
+        Port_Start(1);
     }
     void Update()
     {
@@ -63,7 +69,7 @@ public class SerialMain : MonoBehaviour
             {
                 string str = this.serial.ReadLine();
                 signal = str;
-                Debug.Log(signal);
+                //Debug.Log(signal);
             }
             catch (System.Exception e)
             {
@@ -75,10 +81,11 @@ public class SerialMain : MonoBehaviour
     {
         if (buf == null) buf = buffer;
         if (buf[0] == buffer[0]) return;
-        Debug.Log("try");
         try
         {
-            endserial.Write(buffer, 0, 1);
+            buf = buffer;
+            Debug.Log("try"+ buffer[0]);
+            if(buffer[0] != 0) endserial.Write(buffer, 0, 1);
             /*if (buffer[0]==1) {
                 Debug.Log(buffer[0]);
                 serial.Write(buffer, 0, 1);
@@ -86,7 +93,7 @@ public class SerialMain : MonoBehaviour
             {
                 serial.Write(buffer, 0, 1);
             }*/
-        }
+    }
         catch (System.Exception e)
         {
             Debug.LogWarning(e.Message);
@@ -108,6 +115,20 @@ public class SerialMain : MonoBehaviour
 
         Debug.Log("SerialClosed");
     }
+    private void OnDestroy()
+    {
+        this.isLoop = false;
+        try
+        {
+            endserial.Close();
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log(e.Message);
+        }
+
+        Debug.Log("SerialClosed_des");
+    }
 
     float Map(float value, float start1, float stop1, float start2, float stop2)
     {
@@ -123,7 +144,7 @@ public class SerialMain : MonoBehaviour
 
         try
         {
-            this.serial.Open();
+            endserial.Open();
             Scheduler.ThreadPool.Schedule(() => ReadData()).AddTo(this);
         }
         catch (Exception e)
@@ -133,6 +154,7 @@ public class SerialMain : MonoBehaviour
         }
         if (num<10&&opencom)
         {
+            endserial.Close();
             Port_Start(num + 1);
         }
     }

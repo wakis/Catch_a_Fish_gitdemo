@@ -49,12 +49,12 @@ public class demoCas : MonoBehaviour, Ipgamerule
             audios.PlayOneShot(sounde[1]);
             Destroy(any);
             GetComponent<SpriteRenderer>().enabled = false;
-            //Lotsignal.byWrite(false);
+            Lotsignal.byWrite(false);
             return 1;
         }
         else
         {
-            //Lotsignal.byWrite(true);
+            Lotsignal.byWrite(true);
             return 0;
         }
     }

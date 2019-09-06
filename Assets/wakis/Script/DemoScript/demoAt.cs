@@ -14,6 +14,8 @@ public class demoAt : MonoBehaviour, Ipgamerule
     float timer;
     [SerializeField]
     AdCAST sao;
+    bool vib;
+    bool nonup;
 
     [SerializeField]
     GameObject uki;
@@ -49,16 +51,47 @@ public class demoAt : MonoBehaviour, Ipgamerule
             gamerule.hitobj = gamerule.fishobj.hitobj(Random.Range(0, gamerule.fishobj.listps()) + Random.value);
             Debug.Log(gamerule.hitobj);
         } while (gamerule.hitobj.tag=="fish"&&gamerule.num<-1);
-
+        Lotsignal.byWrite(true);
+        vib = true;
+        nonup = true;
     }
     public int pGame_Update_event()
     {
-        if(hitobj.transform.eulerAngles != new Vector3(0f, 0f, 0f)) hitobj.transform.eulerAngles = new Vector3(0f, 0f, 0f);
+        if (nonup)
+        {
+            if (timer > 0.3f && timer < 0.5f && vib)
+            {
+                vib = !vib;
+                Lotsignal.byWrite(vib);
+            }
+            else if (timer > 0.5f && timer < 0.8f && !vib)
+            {
+                vib = !vib;
+                Lotsignal.byWrite(vib);
+            }
+            else if (timer > 0.8f && timer < 1.1f && vib)
+            {
+                vib = !vib;
+                Lotsignal.byWrite(vib);
+            }
+            else if (timer > 1.1f && timer < 1.4f && !vib)
+            {
+                vib = !vib;
+                Lotsignal.byWrite(vib);
+            }
+            else if (timer > 1.4f && timer < 1.5f && vib)
+            {
+                vib = !vib;
+                Lotsignal.byWrite(vib);
+            }
+        }
+        if (hitobj.transform.eulerAngles != new Vector3(0f, 0f, 0f)) hitobj.transform.eulerAngles = new Vector3(0f, 0f, 0f);
         timer += Time.deltaTime;
         if (!sethit) {
             if (timer > 1.5f)
             {
                 GetComponent<SpriteRenderer>().enabled = false;
+                Lotsignal.byWrite(false);
                 return -1;
             }
             if (Input.GetKeyDown(KeyCode.Space) || playerup())
@@ -66,13 +99,13 @@ public class demoAt : MonoBehaviour, Ipgamerule
                 hitup();
                 GetComponent<SpriteRenderer>().enabled = false;
                 sethit = true;
-                //Lotsignal.byWrite(true);
+                Lotsignal.byWrite(true);
             }
             return 0;
         }
         else if (sethit && hitobj.GetComponent<Rigidbody>().velocity.y <70f&& hitobj.transform.position.y>3f)
         {
-            //Lotsignal.byWrite(false);
+            Lotsignal.byWrite(false);
             Destroy(hitobj);
             Destroy(addaud);
             return 1;
@@ -82,6 +115,7 @@ public class demoAt : MonoBehaviour, Ipgamerule
 
     void hitup()
     {
+        nonup = false;
         sao.castoff();
         if (hitobj != null) Destroy(hitobj);
         addaud = gameObject.AddComponent<AudioSource>();
@@ -98,7 +132,7 @@ public class demoAt : MonoBehaviour, Ipgamerule
 
     bool playerup()
     {
-        if (Lotsignal.pointX[10]-Lotsignal.pointX[9] > 20) return true;
+        if (Lotsignal.pointX[10]-Lotsignal.pointX[9] > 100) return true;
         return false;
     }
 }

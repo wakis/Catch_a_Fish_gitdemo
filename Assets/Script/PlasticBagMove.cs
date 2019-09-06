@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlasticBagMove : MonoBehaviour
 {
-    private float posZ=0.04f,accelerationX=0.005f;
+    private float posZ=0.033f,accelerationX=0.005f;
     private float time = 0, YMoveSwitchTime = 2f;
+    private bool Move=true;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +21,24 @@ public class PlasticBagMove : MonoBehaviour
             accelerationX = -accelerationX;
             time = 0f;
         }
-        this.gameObject.transform.Translate(0, accelerationX, -posZ);
-    }
-
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "Fixation")   //Fixationに触れたらY軸固定
+        if (Move)
         {
-            accelerationX = 0;
-            Vector3 pos = this.gameObject.transform.position;
-            this.gameObject.transform.position = new Vector3(pos.x, -2f, pos.z);
+            this.gameObject.transform.Translate(0, accelerationX, -posZ);   //角度を変更しているためXとY座標の位置が違います
         }
     }
 
     public void PosZ_zero()
     {
         posZ = 0;
+    }
+
+    public void PlasticBagChangeX(float x)
+    {
+        accelerationX = x;
+    }
+
+    public void PCahageMove()   //MoveがfalseになるとUpdateのtransform.Translateを変更を停止します
+    {
+        Move = !Move;
     }
 }

@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/wakis/Scenes/Start.unity
-    guid: 3f3716fd253a82a4f9e6616e4008d4db
+    path: Assets/wakis/Scenes/Opening.unity
+    guid: 33c395ee622be3a46b12d48bc8930d82
   - enabled: 1
     path: Assets/wakis/Scenes/SampleScene.unity
     guid: c2db67d1249b4964e9f1ecada5cc67c2

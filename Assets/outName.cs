@@ -6,13 +6,15 @@ public class outName : MonoBehaviour
 {
     [SerializeField]
     GameObject text;
-    [SerializeField]
+    [SerializeField,Multiline]
     string thisname;
     GameObject texerobj;
     GameObject nullobj;
     Camera mains;
     [System.NonSerialized]
     public bool Result = false;
+    [System.NonSerialized]
+    public int num = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,16 @@ public class outName : MonoBehaviour
         if (Result)
         {
             texerobj.transform.localEulerAngles = new Vector3(0f, 180f, 0f);
+            switch (num) {
+                case 0: texerobj.transform.localPosition = new Vector3(1.4f,-1f,0f);
+                    break;
+                case 1:
+                    texerobj.transform.localPosition = new Vector3(-1.6f, -1f, 0f);
+                    break;
+                case 2:
+                    texerobj.transform.localPosition = new Vector3(0f, 2f, 0f);
+                    break;
+            }
             Debug.Log("res");
         }
         else texerobj.transform.LookAt(texerobj.transform.position - mains.transform.position - mains.transform.eulerAngles);

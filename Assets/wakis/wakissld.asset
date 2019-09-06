@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: -1
   SlideList:
-  - slideImage: {fileID: 21300000, guid: f502f251e78711b4586d9aff83e5245c, type: 3}
+  - slideImage: {fileID: 21300000, guid: 730d200dde19a7d488bb4561e9c89457, type: 3}
   - slideImage: {fileID: 21300000, guid: 18527ec86c8eb8647a1d040b673af010, type: 3}

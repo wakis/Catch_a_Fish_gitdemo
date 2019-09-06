@@ -260,7 +260,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1159545598, guid: b9f0ed807d8d3a445bd63cee3ca5fb5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.8599997
+      value: -2.9599996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159545598, guid: b9f0ed807d8d3a445bd63cee3ca5fb5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.555904
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159545598, guid: b9f0ed807d8d3a445bd63cee3ca5fb5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -76.06676
       objectReference: {fileID: 0}
     - target: {fileID: 1159545597, guid: b9f0ed807d8d3a445bd63cee3ca5fb5b, type: 3}
       propertyPath: m_TargetTexture
@@ -552,15 +560,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 730d200dde19a7d488bb4561e9c89457, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 12.8, y: 7.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &937615953
@@ -570,12 +578,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937615950}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.29}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1863509041}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1435321729
 GameObject:
@@ -913,7 +921,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 937615953}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

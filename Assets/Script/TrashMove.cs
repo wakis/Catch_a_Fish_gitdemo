@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TrashMove : MonoBehaviour
 {
-    private float accelerationY = 0.015f,posZ=0.04f;
+    private float accelerationY = 0.015f,posZ=0.033f;
     private float time;
     private float YMoveSwitchTime=2.5f; //上下移動切り替えの時間
     private float random;
+    private bool Move=true;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -24,27 +25,26 @@ public class TrashMove : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        if (getY() == -0.00001f)
+        {
+            TrashChangeY(0.015f);
+            time = 0f;
+
+            Debug.Log("ゴミ同士が接触しました");
+        }
+        else if (getY() == 0.08f)
+        {
+            time = 0f;
+        }
+
         if (time >= YMoveSwitchTime)
         {
-            if (getY() == -0.00001f)
-            {
-                changeY(-0.015f);
-                time = 0.8f;
-            }
-            //Debug.Log(accelerationY);
             accelerationY = -accelerationY;
             time = 0f;
         }
-        this.gameObject.transform.Translate(0, accelerationY, -posZ);
-    }
-
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "Fixation")   //Fixationに触れたらY軸固定
+        if (Move)
         {
-            accelerationY = 0;
-            Vector3 pos = this.gameObject.transform.position;
-            this.gameObject.transform.position = new Vector3(pos.x, TrashSpawner.CopyPosY + 2.1f, pos.z);
+            this.gameObject.transform.Translate(0, accelerationY, -posZ);
         }
     }
 
@@ -53,7 +53,7 @@ public class TrashMove : MonoBehaviour
         posZ = 0;
     }
 
-    public void changeY(float Y)
+    public void TrashChangeY(float Y)
     {
         accelerationY = Y;
     }
@@ -66,5 +66,10 @@ public class TrashMove : MonoBehaviour
     public float getZ()
     {
         return posZ;
+    }
+
+    public void TCahageMove()   //MoveがfalseになるとUpdateのtransform.Translateを変更を停止します
+    {
+        Move = !Move;
     }
 }

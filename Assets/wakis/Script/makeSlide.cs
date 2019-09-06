@@ -24,7 +24,7 @@ public class makeSlide : MonoBehaviour
         }
         //slide = SL.getsp();
         sr =GetComponent<SpriteRenderer>();
-        transform.position = Camera.main.transform.position+Vector3.forward*6.2f;
+        //transform.position = Camera.main.transform.position+Vector3.forward*6.2f;
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class makeSlide : MonoBehaviour
             sr.sprite = slide[Slidenum];
         }else
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(names);
         }
     }
 }

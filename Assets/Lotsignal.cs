@@ -24,13 +24,35 @@ public class Lotsignal : MonoBehaviour
 
 
     static public bool open;
-    static public float openum=120f;
+    static public float opeave = -1f;
+    static public int[] openum= { -1,-1};
 
     // Start is called before the first frame update
     void Start()
     {
         boolB = false;
         rostB = false;
+    }
+    void setOpen()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (openum[0] <= 0)
+            {
+                openum[0] = (int)opeave;
+                if (openum[0] <= 0) openum[0] = -1;
+            }
+            else
+            {
+                openum[1] = (int)opeave;
+                if(openum[1]< openum[0])
+                {
+                    openum[0] = openum[1] = -1;
+                }
+                if (openum[1] <= 0) openum[1] = -1;
+            }
+        }
+        opeave = (openum[0] + openum[1]) / 2f;
     }
 
     // Update is called once per frame
@@ -42,13 +64,14 @@ public class Lotsignal : MonoBehaviour
         byte[] test=new byte[1];
         if (Input.GetKey(KeyCode.W))
         {
-            test[0] = 1;
+            byWrite(true);
+            SerialMain.Write(test);
         }
-        else
+        else if(Input.GetKey(KeyCode.Q))
         {
-            test[0] = 0;
+            byWrite(false);
+            SerialMain.Write(test);
         }
-        SerialMain.Write(test);
         if (b&&!afb)
         {
             boolB = true;
@@ -65,7 +88,7 @@ public class Lotsignal : MonoBehaviour
         {
             rostB = false;
         }
-        Debug.Log("onbool;"+boolB+"onrost;"+rostB);
+        //Debug.Log("onbool;"+boolB+"onrost;"+rostB);
     }
     void setnum()
     {
@@ -102,12 +125,20 @@ public class Lotsignal : MonoBehaviour
                         }
                         break;
                     case 'r':
-                        if(int.Parse(Regex.Replace(num, @"[^0-9]", ""))>openum)
+                        if (openum[0] > 0f && openum[1] > 0f)
                         {
-                            open = true;
+                            if (int.Parse(Regex.Replace(num, @"[^0-9]", "")) > opeave)
+                            {
+                                open = true;
+                            }
+                            else
+                            {
+                                open = false;
+                            }
                         }else
                         {
-                            open = false;
+                            opeave = (float)int.Parse(Regex.Replace(num, @"[^0-9]", ""));
+                            setOpen();
                         }
                         break;
                 }
@@ -143,12 +174,13 @@ public class Lotsignal : MonoBehaviour
         byte[] test = new byte[1];
         if (t_f)
         {
-            test[0] = 1;
+            test[0] = (byte)'1';
+            SerialMain.Write(test);
         }
         else
         {
-            test[0] = 0;
+            test[0] = (byte)'0';
+            SerialMain.Write(test);
         }
-        SerialMain.Write(test);
     }
 }

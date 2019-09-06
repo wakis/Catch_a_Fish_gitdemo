@@ -35,17 +35,19 @@ public class Opening : MonoBehaviour
     float timer;
     int years;
     Vector3 fishpoint;
+    Vector3 fadepoint;
     // Start is called before the first frame update
     void Start()
     {
         wave.volume = 1f;
         bgm.volume = 0f;
         if (fishpoint==Vector3.zero) fishpoint = fish.transform.position;
-        timer = 0;
+        if (fadepoint == Vector3.zero) fadepoint = fade.transform.position;
+         timer = 0;
         fade.color = new Color(1f, 1f, 1f, 0f);
         year.color = new Color(1f, 1f, 1f, 0f);
         fish.transform.position = fishpoint;
-        fade.transform.position = new Vector3(0f, 1f, -6f);
+        fade.transform.position = fadepoint;
         //vp.enabled = false;
         vp.Stop();
         vp.Prepare();
@@ -106,7 +108,7 @@ public class Opening : MonoBehaviour
                     var fishs = fish.transform.position;
                     var tops = fade.transform.position;
                     fishs.x -= Time.deltaTime * 2f* fishpoint.x / ptime[2];
-                    tops.x -= Time.deltaTime * 14f / ptime[2];
+                    tops.x -= Time.deltaTime * 2f * fishpoint.x / ptime[2];
                     bgm.volume += Time.deltaTime/ptime[2];
                     fish.transform.position = fishs;
                     fade.transform.position= tops;

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 502f865b42eb9564aac5b05dafd2e6c9
+guid: 9b5dedcc5f92e8c4080b3e4f40daa31a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -10,12 +10,7 @@ ModelImporter:
     3300000: //RootNode
     4300000: pCube1
     2186277476908879412: ImportLogs
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: shovel_texture
-    second: {fileID: 2800000, guid: e88707a6be774454f8fe5c7a3ca5f350, type: 3}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

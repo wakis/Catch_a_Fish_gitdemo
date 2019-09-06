@@ -67,13 +67,15 @@ public class demoRe : MonoBehaviour, Ipgamerule
                 {
                     float y = count * 15f / (gamerule.washitobj.Count - 1f);
                     var on = Instantiate(obj);
-                    on.GetComponent<outName>().Result = true;
+                    var onre = on.GetComponent<outName>();
+                    onre.Result = true;
+                    onre.num = count;
                     on.SetActive(false);
                     //Destroy(on.GetComponent<nonResultsize>());
                     Debug.Log("Des");
                     on.transform.position = objls[count].transform.position;
                     on.transform.eulerAngles = objls[count].transform.eulerAngles;
-                    on.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                    on.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                     rez.Add(on);
                     count++;
                     on.SetActive(true);

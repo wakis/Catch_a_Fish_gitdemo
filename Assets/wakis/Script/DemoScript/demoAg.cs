@@ -57,7 +57,6 @@ public class demoAg : MonoBehaviour, Ipgamerule
             if (setact == null) Debug.Log("out");
             Debug.Log(setact);
             var vsact = new Vector3(Lotsignal.acceX, Lotsignal.acceY, Lotsignal.acceZ);
-            Debug.Log("\t" + vsact);
             if (true)
             {
                 if (setact.z<1) return false;

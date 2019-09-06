@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 6234317102816904945, guid: f17dd9baa539ce54792435a4f9404f4b, type: 3}
-  thisname: "\u4F7F\u3044\u6368\u3066\u306E \u304A\u5F01\u5F53\u5BB9\u5668"
+  thisname: "\u4F7F\u3044\u6368\u3066\u306E\n\u304A\u5F01\u5F53\u5BB9\u5668 "
 --- !u!1 &7238532193792377552
 GameObject:
   m_ObjectHideFlags: 0
