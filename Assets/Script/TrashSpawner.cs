@@ -6,7 +6,7 @@ public class TrashSpawner : MonoBehaviour
 {
     [SerializeField] private float StartCreateTime = 5.0f;    //初期のゴミ生成時間
     [SerializeField] private float NextCreateTime = 20.0f;    //2回目以降のゴミ生成時間
-    private float startTime=0;    //経過時間
+    private float startTime;    //経過時間
     private int TimeCount=0,timeOut=80; //TimeCountがtimeOutの時間を過ぎたらTrashの生成を終了する
     private float CreateTime;   //ゴミ生成時間の代入先
     [SerializeField, Header("X軸のゴミ生成範囲をマイナス方向にいくつ広げるか"+"(符号は付けないでください)")] private int minX = 50;
@@ -32,9 +32,11 @@ public class TrashSpawner : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        startTime = 0;
         CreateTime = StartCreateTime;
         yield return new WaitForSeconds(0.0001f);    //処理遅延秒数
         PositionScript = GameObject.Find("StageObject").GetComponent<StageObjectPositionGet>();
+        CopyPosY = 0;
         CopyPosY += PositionScript.StagePosition_GetY();
         CopyPosY += posY;
         //Debug.Log("ゴミY座標" + CopyPosY);

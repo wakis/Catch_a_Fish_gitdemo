@@ -22,9 +22,9 @@ public class DebugSceneManager : MonoBehaviour
             var anyone = Input.inputString;
             switch (anyone)
             {
-                case "O":
-                case "I":
-                case "U":
+                case "0":
+                case "1":
+                case "2":
                 int num = int.Parse(anyone);
                     try
                     {
