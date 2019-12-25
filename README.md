@@ -1,4 +1,4 @@
-# Catch_a_Fish_gitdemo
+﻿# Catch_a_Fish_gitdemo
  
 2019年度
 
@@ -15,7 +15,7 @@ Have a good developing.
 
 これは、TGS2019に出展した「フィッシングプラス」のROMです。
 
-開発環境は Unity2018.4.8f1
+開発環境は Unity2018.3.2f1
 
 PC Standalone でビルドします。
 
